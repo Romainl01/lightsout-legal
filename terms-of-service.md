@@ -1,7 +1,7 @@
 # Terms of Service
 
 **Lights Out**
-Version 1.0, 30 August 2026
+Version 1.1, 4 September 2026
 
 > Everything in this document is written against what the app actually does.
 
@@ -61,7 +61,45 @@ One account is for one person. Do not share it.
 You can delete your account at any time from Profile, then Account, then Delete
 account. It is immediate and it cannot be undone.
 
-## 6. What you may not do
+## 6. Lights Out Pro
+
+Lights Out Pro is an **auto-renewing subscription**. It is sold through the App
+Store, and it is the only thing in the app you can pay for.
+
+**The plans**
+
+| Plan | Length | Free trial |
+| --- | --- | --- |
+| Yearly | 1 year | 7 days |
+| Monthly | 1 month | none |
+| Weekly | 1 week | none |
+
+**The price** is the one shown on the subscription screen in the app, in your own
+currency, at the moment you subscribe. It is set per country by Apple's price
+tiers, so the figure you see is the figure you pay. We do not show a price
+anywhere the App Store has not given us one.
+
+**The free trial** is 7 days, on the yearly plan only. Apple allows one
+introductory offer per person per subscription group, so you can use it once. If
+you cancel before it ends, you are not charged.
+
+**Renewal.** Payment is taken by your Apple Account. The subscription renews
+automatically at the end of each period unless you turn off auto-renew **at least
+24 hours before** the period ends. Your account is charged for the renewal within
+the 24 hours before the period ends.
+
+**Cancelling.** You manage and cancel the subscription in your Apple Account
+settings, not here: **Settings → your name → Subscriptions**. We cannot cancel it
+for you, and deleting the app does not cancel it. Cancelling stops the next
+renewal; it does not refund the period you are in.
+
+**Refunds** are handled by Apple, under the App Store's terms, at
+reportaproblem.apple.com. We do not take payments and we cannot issue refunds.
+
+**Changes to the price.** If a price changes, Apple tells you before the change
+takes effect and asks you to agree to it, in the way its rules require.
+
+## 7. What you may not do
 
 Do not use the app to break the law. Do not try to break into the service, other
 people's accounts, or the parts of it that are not yours. Do not use the feedback
@@ -70,19 +108,19 @@ app.
 
 We may suspend or delete an account that does any of that.
 
-## 7. Feedback you send us
+## 8. Feedback you send us
 
 If you send a feedback report or a suggestion, we may use it to improve the app,
 without owing you anything for it and without it becoming confidential. We are
 not going to publish your name or your email address.
 
-## 8. The app itself
+## 9. The app itself
 
 The app, its name, its design and its code belong to Romain Lagrange. Using the
 app gives you a personal, revocable, non-transferable licence to use it, and
 nothing more.
 
-## 9. It is provided as it is
+## 10. It is provided as it is
 
 The app is provided "as is". We do not promise it is free of bugs, that it will
 always be available, or that it fits any particular purpose of yours.
@@ -92,24 +130,26 @@ loss: a missed alarm, a missed appointment, lost data, or a worse night's sleep.
 Nothing here limits liability that cannot be limited by law, and if you are a
 consumer in the EU, your statutory rights are untouched by this section.
 
-## 10. Changes
+## 11. Changes
 
 These terms can change. If they change in a way that matters, the version and
 date at the top change with them, and continuing to use the app means you accept
 the new version.
 
-## 11. Ending it
+## 12. Ending it
 
-You can stop at any time by deleting your account and removing the app. We can
-end your access if you break these terms, or if we stop running the service. If
-we ever shut the service down, we will say so in the app before we do.
+You can stop at any time by deleting your account and removing the app. **If you
+have a subscription, cancel it in your Apple Account settings first** — deleting
+the account here does not cancel a subscription Apple is billing. We can end your
+access if you break these terms, or if we stop running the service. If we ever
+shut the service down, we will say so in the app before we do.
 
-## 12. Law
+## 13. Law
 
 These terms are governed by French law, and the courts of France
 have jurisdiction. If you are a consumer, this does not deprive you of the
 protection of the mandatory rules of the country you live in.
 
-## 13. Contact
+## 14. Contact
 
 romainlagrange33@gmail.com

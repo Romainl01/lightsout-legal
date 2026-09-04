@@ -1,7 +1,7 @@
 # Privacy Policy
 
 **Lights Out**
-Version 1.0, 30 August 2026
+Version 1.1, 4 September 2026
 
 > Every factual claim in this document was written against the app's source
 > code rather than from a template, and each one was re-checked against that
@@ -14,11 +14,18 @@ Version 1.0, 30 August 2026
 Lights Out helps you go to bed earlier. To do that it reads your sleep from
 Apple Health, and it can block apps you choose in the evening.
 
-**Your sleep data never leaves your phone.** Not to us, not to anyone. The app
-reads it, scores it, draws it, and that is the end of it.
+**Your sleep readings stay on your phone.** Your sleep stages, your heart rate,
+your heart rate variability and the times you went to bed are read, scored and
+drawn on the device, and none of them are ever transmitted.
 
-What does leave your phone is small and deliberate: the account you sign in
-with, and anything you type into the feedback form. That is the whole list.
+Two small things do leave, and both are deliberate: the account you sign in
+with, and anything you type into the feedback form. A third leaves only if you
+subscribe, and it is your purchase, not your sleep.
+
+One more can leave, and only if you switch it on: if you compare your nights
+with friends, your sleep score and your sleep length are sent for the nights you
+share. Sharing is off unless you turn it on, it is limited to friends you
+invited yourself, and turning it off deletes what was already shared.
 
 ---
 
@@ -42,17 +49,20 @@ This section exists because it is the larger half of what the app does.
 | --- | --- | --- |
 | Sleep stages, sleep and wake times | Apple Health, read only | Stays on the device |
 | Heart rate, heart rate variability | Apple Health, read only | Stays on the device |
-| Your sleep score and your night history | Computed on the device | Stays on the device |
+| Your night history, and your score on any night you have not shared | Computed on the device | Stays on the device |
 | The apps you choose to block | Apple Screen Time | Stays on the device |
 | Your wake-up time, your target sleep, your name | You, during setup | Stays on the device |
 | Your alarm | Apple AlarmKit | Stays on the device |
 
 **Health data.** Lights Out asks Apple Health for permission to *read* sleep,
 heart rate and heart rate variability. It never asks for permission to write.
-The permission screen you saw says "Nothing leaves your phone", and that
-sentence is an engineering constraint in this codebase, not a marketing line:
-no health measurement is included in anything the app transmits, including
-feedback reports.
+No health MEASUREMENT is included in anything the app transmits, including
+feedback reports, and that is an engineering constraint in this codebase rather
+than a marketing line. Your stages, your heart rate, your heart rate variability
+and your bed and wake times have no path off the device at all.
+
+The one exception is the one you choose: if you turn on sharing with friends,
+two derived numbers are sent, and only those two. See section 3.4.
 
 **The apps you block.** When you pick apps to block in the evening, iOS does not
 hand the app their names. It hands back opaque tokens that only the system can
@@ -104,12 +114,69 @@ not a number about you.
 
 The screen tells you this before you send, in the same words.
 
+### 3.4 Comparing your nights with friends
+
+This is the only feature that sends anything derived from Apple Health, and it
+is off until you turn it on.
+
+**What is sent.** For each night you share, exactly two numbers: your sleep
+score out of 100, and how long you slept in minutes. Nothing else. Not the time
+you went to bed, not the time you woke up, not your sleep stages, not your heart
+rate, not your heart rate variability, not your first name.
+
+**Who can read it.** Only people you became friends with, and you become friends
+only when one of you sends an invite link and the other opens it. There is no
+search, no directory, and no way for a stranger to find you. Removing a friend
+also blocks them, so the same link cannot rebuild the connection.
+
+**How long it is kept.** Thirty five days. A daily job deletes anything older,
+because no screen in the app looks back further than a week.
+
+**How to stop.** One switch in your profile. Turning sharing off deletes every
+night you have already shared, not just the ones to come.
+
+**Why we ask you explicitly.** Sleep is health data, which the GDPR treats as a
+special category. The only lawful basis for sharing it here is your explicit
+consent, so the app asks for it on a screen of its own, states exactly what is
+sent, and lets you withdraw it in the same number of taps it took to give.
+
+### 3.5 Your subscription
+
+Lights Out Pro is sold by Apple, through the App Store. We never see your card,
+your billing address, or your Apple Account.
+
+The app uses **RevenueCat** to check whether your subscription is active. What
+that means in practice:
+
+- **Your purchase is anonymous to us.** The app does not tell RevenueCat who you
+  are. It never sends your account identifier, your email address or your
+  handle, so your subscription is held under an identifier RevenueCat generates
+  on its own and is **not joined to your Lights Out account**.
+- **What RevenueCat receives:** your App Store purchase and renewal history for
+  this app, plus the ordinary technical context of the request, which is your
+  device model, your iOS version, the app version and the country your network
+  connection appears to be in.
+- **What it never receives:** anything from Apple Health. Not a score, not a
+  duration, not a heart rate. The subscription check and your sleep have no
+  code path between them.
+
+RevenueCat is in the United States. Your purchase history also lives with Apple,
+under Apple's own policy, because Apple is the merchant.
+
+**Cancelling** is done in the App Store, in Settings, and not by us. If you
+subscribe with a free trial, the app schedules **one** reminder, two days before
+the first charge. That reminder is a local notification: it is scheduled on your
+phone, it never reaches a server, and no push token exists in this app.
+
+---
+
 ### 3.3 What we do not collect
 
 No analytics. No crash reporting service. No advertising identifier. No
-tracking, in the App Store's sense or any other. No third party SDK that
-collects anything: the app has thirty-seven dependencies and not one of them is
-an analytics, attribution or advertising library.
+tracking, in the App Store's sense or any other. Of the app's forty-six
+dependencies, not one is an analytics, attribution or advertising library, and
+exactly one third party SDK collects anything at all: RevenueCat, which receives
+your purchase history and nothing else. See section 3.5.
 
 We do not sell data. There is no data to sell.
 
@@ -117,19 +184,21 @@ We do not sell data. There is no data to sell.
 
 ## 4. Who else touches this data
 
-Three companies, each for one job:
+Four companies, each for one job:
 
 | Who | What they do | Where |
 | --- | --- | --- |
 | **Supabase** | Hosts the account database and the feedback table | Paris, France (`eu-west-3`) |
 | **Resend** | Delivers a feedback report to us as an email | United States |
+| **RevenueCat** | Tells the app whether your subscription is active | United States |
 | **Apple** | Sign in with Apple; the App Store | Per Apple's own policy |
 
 Your feedback report reaches us as an email, so it passes through Resend and
 then sits in a normal mailbox, with the ordinary consequences that has.
 
 Apple Health data and Screen Time selections reach none of them, because they
-never leave your device.
+never leave your device. RevenueCat in particular receives your purchase and no
+part of your account: see section 3.5.
 
 ---
 
