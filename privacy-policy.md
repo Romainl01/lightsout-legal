@@ -1,7 +1,7 @@
 # Privacy Policy
 
 **Lights Out**
-Version 1.1, 4 September 2026
+Version 1.2, 30 September 2026
 
 > Every factual claim in this document was written against the app's source
 > code rather than from a template, and each one was re-checked against that
@@ -22,10 +22,10 @@ Two small things do leave, and both are deliberate: the account you sign in
 with, and anything you type into the feedback form. A third leaves only if you
 subscribe, and it is your purchase, not your sleep.
 
-One more can leave, and only if you switch it on: if you compare your nights
-with friends, your sleep score and your sleep length are sent for the nights you
-share. Sharing is off unless you turn it on, it is limited to friends you
-invited yourself, and turning it off deletes what was already shared.
+One more can leave, and only if you add a friend: nine numbers derived from
+each night, your score and how long you slept among them, never your bedtime.
+The app tells you what is sent before you add anyone. Sharing is limited to
+friends you invited yourself, and turning it off deletes what was already shared.
 
 ---
 
@@ -61,8 +61,8 @@ feedback reports, and that is an engineering constraint in this codebase rather
 than a marketing line. Your stages, your heart rate, your heart rate variability
 and your bed and wake times have no path off the device at all.
 
-The one exception is the one you choose: if you turn on sharing with friends,
-two derived numbers are sent, and only those two. See section 3.4.
+The one exception is the one you choose: if you add a friend, a short list of
+derived numbers is sent, and only those. See section 3.4.
 
 **The apps you block.** When you pick apps to block in the evening, iOS does not
 hand the app their names. It hands back opaque tokens that only the system can
@@ -117,12 +117,25 @@ The screen tells you this before you send, in the same words.
 ### 3.4 Comparing your nights with friends
 
 This is the only feature that sends anything derived from Apple Health, and it
-is off until you turn it on.
+is off until you add a friend.
 
-**What is sent.** For each night you share, exactly two numbers: your sleep
-score out of 100, and how long you slept in minutes. Nothing else. Not the time
-you went to bed, not the time you woke up, not your sleep stages, not your heart
-rate, not your heart rate variability, not your first name.
+**What is sent.** For each night you share, nine numbers and nothing else:
+
+- your sleep score out of 100;
+- the four parts that make it up, each scored out of 100: duration, stages,
+  efficiency and regularity;
+- how long you slept, in minutes;
+- how long you spent in deep, REM and core sleep, in minutes.
+
+**What is never sent.** Not the time you went to bed, not the time you woke up,
+not how long you spent in bed, not the shape of your night minute by minute, not
+your heart rate, not your heart rate variability, not your breathing rate, not
+your first name.
+
+Your bedtime deserves its own line, because it is the subject of the app and it
+still does not leave your phone. A regularity score says how tightly grouped
+your bedtimes are; it never says what they were, and none of the nine numbers
+above can be used to work them out.
 
 **Who can read it.** Only people you became friends with, and you become friends
 only when one of you sends an invite link and the other opens it. There is no
@@ -137,8 +150,9 @@ night you have already shared, not just the ones to come.
 
 **Why we ask you explicitly.** Sleep is health data, which the GDPR treats as a
 special category. The only lawful basis for sharing it here is your explicit
-consent, so the app asks for it on a screen of its own, states exactly what is
-sent, and lets you withdraw it in the same number of taps it took to give.
+consent, so the app asks for it at the moment you add a friend: the sentence
+next to the button says what is sent, before you tap it. The full list, and
+the switch to withdraw, are in your profile, under Sharing.
 
 ### 3.5 Your subscription
 
