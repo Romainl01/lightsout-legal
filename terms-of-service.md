@@ -1,7 +1,7 @@
 # Terms of Service
 
 **Lights Out**
-Version 1.1, 4 September 2026
+Version 1.2, 30 September 2026
 
 > Everything in this document is written against what the app actually does.
 
@@ -105,6 +105,14 @@ Do not use the app to break the law. Do not try to break into the service, other
 people's accounts, or the parts of it that are not yours. Do not use the feedback
 form to send abuse, spam, or anything illegal. Do not decompile or resell the
 app.
+
+Your handle and your photo are seen by your friends. Do not use either for
+anything offensive, sexual, hateful, threatening, or that impersonates someone.
+There is zero tolerance for this.
+
+You can report someone from their page in the app, and remove and block them
+from the same place. We look at every report within 24 hours, and we remove
+content or delete accounts that break these rules.
 
 We may suspend or delete an account that does any of that.
 
