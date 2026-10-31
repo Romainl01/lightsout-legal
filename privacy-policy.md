@@ -1,7 +1,7 @@
 # Privacy Policy
 
 **Lights Out**
-Version 1.2, 30 September 2026
+Version 1.3, 30 October 2026
 
 > Every factual claim in this document was written against the app's source
 > code rather than from a template, and each one was re-checked against that
@@ -21,6 +21,11 @@ drawn on the device, and none of them are ever transmitted.
 Two small things do leave, and both are deliberate: the account you sign in
 with, and anything you type into the feedback form. A third leaves only if you
 subscribe, and it is your purchase, not your sleep.
+
+The app also reports how it is used: which screens you open and which steps you
+take, so we can see where it works and where people give up. Those reports never
+contain anything read from Apple Health, your name or your email address. See
+section 3.6.
 
 One more can leave, and only if you add a friend: nine numbers derived from
 each night, your score and how long you slept among them, never your bedtime.
@@ -162,10 +167,13 @@ your billing address, or your Apple Account.
 The app uses **RevenueCat** to check whether your subscription is active. What
 that means in practice:
 
-- **Your purchase is anonymous to us.** The app does not tell RevenueCat who you
-  are. It never sends your account identifier, your email address or your
-  handle, so your subscription is held under an identifier RevenueCat generates
-  on its own and is **not joined to your Lights Out account**.
+- **Your subscription is attached to your account identifier**, a random code
+  that names no one. That is what brings Pro back when you sign in on a new
+  phone, without a "Restore" button. RevenueCat never receives your email
+  address, your name or your handle.
+- **RevenueCat tells our analytics service when a subscription starts, renews
+  or ends**, under the same identifier, so we can see which part of the app
+  people subscribe from. See section 3.6.
 - **What RevenueCat receives:** your App Store purchase and renewal history for
   this app, plus the ordinary technical context of the request, which is your
   device model, your iOS version, the app version and the country your network
@@ -177,42 +185,74 @@ that means in practice:
 RevenueCat is in the United States. Your purchase history also lives with Apple,
 under Apple's own policy, because Apple is the merchant.
 
-**Cancelling** is done in the App Store, in Settings, and not by us. If you
-subscribe with a free trial, the app schedules **one** reminder, two days before
-the first charge. That reminder is a local notification: it is scheduled on your
-phone, it never reaches a server, and no push token exists in this app.
+**Cancelling** is done in the App Store, in Settings, and not by us.
+
+**Notifications**, if you allow them, are local: a heads-up before your
+wind-down, a morning reminder to see your sleep score, and a few reminders about
+the plan you set up. They are scheduled on your phone from what is already on
+it, they never reach a server, and no push token exists in this app. You can
+turn each kind off in Profile, Notifications.
 
 ---
 
 ### 3.3 What we do not collect
 
-No analytics. No crash reporting service. No advertising identifier. No
-tracking, in the App Store's sense or any other. Of the app's forty-six
-dependencies, not one is an analytics, attribution or advertising library, and
-exactly one third party SDK collects anything at all: RevenueCat, which receives
-your purchase history and nothing else. See section 3.5.
+No crash reporting service. No advertising identifier. No tracking, in the App
+Store's sense or any other: nothing is shared with advertisers or data brokers,
+and nothing is combined with data from other companies' apps. Two third party
+SDKs collect anything at all: RevenueCat, which receives your purchase history
+(section 3.5), and PostHog, which receives the usage reports of section 3.6.
 
 We do not sell data. There is no data to sell.
+
+### 3.6 How the app is used
+
+The app uses **PostHog** to count how it is used. It reports:
+
+- which screens you open, and which steps of the setup you reach;
+- what you do with the app's own controls: arming the shield, taking a break
+  from it, holding "Hold to sleep", changing your wake time or the sleep you
+  aim for, adding a friend, subscribing;
+- the choices you make during setup about your habits and goals (for example,
+  which kinds of apps keep you up). The sleep problems you tick are counted, not
+  named;
+- the time you hold "Hold to sleep", as minutes before or after the time you
+  planned, rounded to five minutes;
+- the app version, your device model, your iOS version and your country.
+
+Each report carries your account identifier, the same random code as in
+section 3.5, so we can follow a path through the app over several days.
+
+It **never** contains anything read from Apple Health (no sleep times, no
+durations, no score, no heart rate), your name, your email address, your
+handle, your photo, your friends, or the apps you block, which the app cannot
+read anyway.
+
+We use this to improve the app, on the basis of our legitimate interest. You can
+object at any time by writing to romainlagrange33@gmail.com: we will stop
+collecting these reports for your account and delete the ones already recorded.
 
 ---
 
 ## 4. Who else touches this data
 
-Four companies, each for one job:
+Five companies, each for one job:
 
 | Who | What they do | Where |
 | --- | --- | --- |
 | **Supabase** | Hosts the account database and the feedback table | Paris, France (`eu-west-3`) |
 | **Resend** | Delivers a feedback report to us as an email | United States |
 | **RevenueCat** | Tells the app whether your subscription is active | United States |
+| **PostHog** | Counts how the app is used (section 3.6) | United States |
 | **Apple** | Sign in with Apple; the App Store | Per Apple's own policy |
 
 Your feedback report reaches us as an email, so it passes through Resend and
 then sits in a normal mailbox, with the ordinary consequences that has.
 
 Apple Health data and Screen Time selections reach none of them, because they
-never leave your device. RevenueCat in particular receives your purchase and no
-part of your account: see section 3.5.
+never leave your device. RevenueCat receives your purchase and your account
+identifier, nothing else: see section 3.5. PostHog receives the usage reports of
+section 3.6, never a reading from Apple Health.
 
 ---
 
@@ -220,6 +260,10 @@ part of your account: see section 3.5.
 
 Your account and its data live until you delete the account. There is no other
 clock.
+
+Usage reports (section 3.6) are kept for as long as they help us improve the
+app. Deleting your account stops new ones; to have past ones deleted, write to
+us and we will.
 
 Feedback reports are kept as long as they are useful for fixing what they
 describe, and the copy that arrived by email lives in a mailbox like any other
@@ -259,7 +303,8 @@ In practice, for this app:
 
 - **Deletion** is a button in the app, and it is faster than writing to us.
 - **Access and export**: write to us and we will send you what we hold, which is
-  your account row and your feedback reports.
+  your account row, your feedback reports and your usage reports.
+- **Objecting to usage reports**: write to us, see section 3.6.
 - **Correction**: your name and settings are yours to change in the app; the
   email address comes from Apple and changes there.
 
