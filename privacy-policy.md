@@ -1,7 +1,7 @@
 # Privacy Policy
 
 **Lights Out**
-Version 1.3, 30 October 2026
+Version 1.4, 31 October 2026
 
 > Every factual claim in this document was written against the app's source
 > code rather than from a template, and each one was re-checked against that
@@ -197,7 +197,8 @@ turn each kind off in Profile, Notifications.
 
 ### 3.3 What we do not collect
 
-No crash reporting service. No advertising identifier. No tracking, in the App
+No separate crash reporting service: the errors of section 3.6 travel with the
+usage reports, to PostHog. No advertising identifier. No tracking, in the App
 Store's sense or any other: nothing is shared with advertisers or data brokers,
 and nothing is combined with data from other companies' apps. Two third party
 SDKs collect anything at all: RevenueCat, which receives your purchase history
@@ -218,6 +219,9 @@ The app uses **PostHog** to count how it is used. It reports:
   named;
 - the time you hold "Hold to sleep", as minutes before or after the time you
   planned, rounded to five minutes;
+- whether you opened the app from its home screen widget;
+- when the app hits an error it did not expect: the error message and where it
+  happened in the app's code, so we can fix it;
 - the app version, your device model, your iOS version and your country.
 
 Each report carries your account identifier, the same random code as in
